@@ -114,7 +114,7 @@ public class LibraryJournal extends LibraryItem {
     /**
      * Constructs a Journal item for the collection. Each edition of a journal in the library should be represented by one instance of this object
      * @param ISSN
-     * @param section LibrarySection enum representing the section of the library in which this journal can be found.
+     * @param section LibrarySection enum representing the section of the library in which this journal can be found
      * @param volume
      * @param issue
      * @param Publisher
