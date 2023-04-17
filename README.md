@@ -1,7 +1,7 @@
 # CS3330-Class-Project
 # Highly Recommended:
 - Use IntelliJ Idea (info at bottom of ReadMe)
-- Using AdoptOpenJDK version 17.0.6, download it [here](https://adoptium.net/temurin/releases/)
+- Using Java 19 (should be able to install it through Jetbrains IDEA IDE)
 - Document everything using Javadoc system (type /** above your function declaration and your IDE will provide you a template doc to fill out. Check out existing code for examples)
 ## Instructions for using this repository
 1. Decide what you want to work on (ie: a specific class, database features, the main loop, etc)
