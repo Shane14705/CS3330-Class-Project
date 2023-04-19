@@ -110,15 +110,15 @@ public class LibraryJournal extends LibraryItem {
     }
 
 
-    //TODO: Finish filling out the documentation for the parameters here
+
     /**
      * Constructs a Journal item for the collection. Each edition of a journal in the library should be represented by one instance of this object
-     * @param ISSN
+     * @param ISSN Integer array containing 8 digits that ensures a unique identifier for this journal publication.
      * @param section LibrarySection enum representing the section of the library in which this journal can be found
-     * @param volume
-     * @param issue
-     * @param Publisher
-     * @param Title
+     * @param volume Integer containing the volume of this journal publication
+     * @param issue Integer containing the issue of this journal publication
+     * @param Publisher String containing the name of the publisher of this journal
+     * @param Title String containing the title of this journal
      * @param ID_num Character array containing 6 chars to represent the 6-digit alphanumeric unique ID for this journal in the library collection
      * @param price Float representing the price of one copy of this journal (in case it needs to be replaced or new copies need to be bought)
      * @param numberAvailable Int representing the number of copies of this journal that will currently be available to borrow
