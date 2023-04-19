@@ -107,7 +107,7 @@ public class LibraryDVD extends LibraryItem {
     }
 
 
-    //TODO: Finish filling out the documentation for the parameters here
+
     /**
      * Constructs a DVD item for the collection. Each DVD title in the library should be represented by one instance of this object
      * @param ISBN Integer array containing 10 digits that ensures a uniqueness identifier for this DVD title

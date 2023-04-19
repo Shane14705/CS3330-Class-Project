@@ -109,7 +109,7 @@ public class LibraryBook extends LibraryItem {
     }
 
 
-    //TODO: Finish filling out the documentation for the parameters here
+
     /**
      * Constructs a Book item for the collection. Each Book title in the library should be represented by one instance of this object
      * @param ISBN Integer array containing 10 digits to ensure a unique identifier for this Book title
