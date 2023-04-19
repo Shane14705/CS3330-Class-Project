@@ -112,12 +112,12 @@ public class LibraryBook extends LibraryItem {
     //TODO: Finish filling out the documentation for the parameters here
     /**
      * Constructs a Book item for the collection. Each Book title in the library should be represented by one instance of this object
-     * @param ISBN
+     * @param ISBN Integer array containing 10 digits to ensure a unique identifier for this Book title
      * @param section LibrarySection enum representing the section of the library in which this Book can be found
-     * @param Page_count
-     * @param Book_Title
-     * @param Book_Author
-     * @param Publisher
+     * @param Page_count Integer representing the total number of pages in this Book
+     * @param Book_Title String representing the title of this Book
+     * @param Book_Author String representing the author of this Book
+     * @param Publisher String representing the publisher of this Book
      * @param ID_num Character array containing 6 chars to represent the 6-digit alphanumeric unique ID for this Book in the library collection
      * @param price Float representing the price of one copy of this Book (in case it needs to be replaced or new copies need to be bought)
      * @param numberAvailable Int representing the number of copies of this Book that will currently be available to borrow

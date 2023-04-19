@@ -110,12 +110,12 @@ public class LibraryDVD extends LibraryItem {
     //TODO: Finish filling out the documentation for the parameters here
     /**
      * Constructs a DVD item for the collection. Each DVD title in the library should be represented by one instance of this object
-     * @param ISBN
+     * @param ISBN Integer array containing 10 digits that ensures a uniqueness identifier for this DVD title
      * @param section LibrarySection enum representing the section of the library in which this DVD can be found
-     * @param runTime
-     * @param DVD_Title
-     * @param Cast_List
-     * @param Director
+     * @param runTime Integer representing the total run time for this DVD (in minutes)
+     * @param DVD_Title String representing the title of this DVD
+     * @param Cast_List String array holding the cast of this DVD
+     * @param Director String representing the director of this DVD
      * @param ID_num Character array containing 6 chars to represent the 6-digit alphanumeric unique ID for this DVD in the library collection
      * @param price Float representing the price of one copy of this DVD (in case it needs to be replaced or new copies need to be bought)
      * @param numberAvailable Int representing the number of copies of this DVD that will currently be available to borrow
