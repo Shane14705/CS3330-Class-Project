@@ -6,7 +6,7 @@ import LibrarySystem.People.Member;
 import java.util.Calendar;
 import java.time.*;
 
-public class ItemLoan {
+public class ItemLoan implements java.io.Serializable {
 
     private Member borrower;
 

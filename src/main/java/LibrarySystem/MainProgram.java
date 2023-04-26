@@ -8,7 +8,7 @@ public class MainProgram {
         System.out.println("University of Java Library System");
         System.out.println("Menu Options");
         System.out.println("1. New Membership");
-        System.out.println("2. New Collection");
+        System.out.println("2. New Item in Collection");
         System.out.println("3. Remove Membership");
         System.out.println("4. Remove Item from Collection");
         System.out.println("5. New Employee");

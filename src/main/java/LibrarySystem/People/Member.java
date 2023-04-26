@@ -1,16 +1,24 @@
 package LibrarySystem.People;
 
+import LibrarySystem.util.SSN;
 import jdk.jshell.spi.ExecutionControl;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import LibrarySystem.util.ItemLoan;
 
-public class Member extends  Person {
+public class Member extends Person implements java.io.Serializable {
     private int id_num;
 
     private float amountOwed = 0.0f;
 
     private ArrayList<ItemLoan> currentLoans;
+
+    public Member(String name, String address, Date date_of_birth, String email_address, SSN ssn, int MemberID) {
+        super(name, address, date_of_birth, email_address, ssn);
+        this.id_num = MemberID;
+    }
 
     //TODO: Add List of LibraryCollection Objects representing everything the member currently has checked out
 

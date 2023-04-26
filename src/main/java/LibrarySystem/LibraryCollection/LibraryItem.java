@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 //The idea is every item in the library will have ONE instance of its respective class for it. ie: book A will have one Book instance regardless of how many copies of BookA are going around
-public class LibraryItem {
+public class LibraryItem implements java.io.Serializable {
 
 
 
