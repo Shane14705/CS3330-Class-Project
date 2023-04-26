@@ -1,6 +1,7 @@
 package LibrarySystem;
 
 import java.util.Scanner;
+import java.sql.*;
 
 public class MainProgram {
     public static void mainMenu(){
@@ -31,6 +32,14 @@ public class MainProgram {
     public static void newReturnEvent(){};
     public static void newCheckOverdues(){};
     public static void main(String [] args) {
+        //Connecting to database
+        try {
+            Connection db = DriverManager.getConnection("jdbc:sqlite:library.db");
+        } catch (SQLException exception) {
+            System.out.println("Unable to connect to database! Closing program...");
+            System.exit(-1);
+        }
+
         while(true) {
             MainProgram.mainMenu();
             System.out.print("Enter your option number: ");
