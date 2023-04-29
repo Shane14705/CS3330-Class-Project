@@ -20,8 +20,6 @@ public class Member extends Person implements java.io.Serializable {
         this.id_num = MemberID;
     }
 
-    //TODO: Add List of LibraryCollection Objects representing everything the member currently has checked out
-
 
     //This function will be used to send the return/overdue reminders, returns boolean saying whether notification went through or not
     public boolean NotifyMember(String message) {
