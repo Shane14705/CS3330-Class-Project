@@ -30,11 +30,19 @@ public class Member extends Person implements java.io.Serializable {
         return currentLoans.size();
     }
 
+    public ArrayList<ItemLoan> getCurrentLoans() {
+        return currentLoans;
+    }
+
     public void registerLoan(ItemLoan loanInstance) {
         currentLoans.add(loanInstance);
     }
 
     public void endLoan(ItemLoan loanInstance) {
         currentLoans.remove(loanInstance);
+    }
+
+    public int getId_num() {
+        return id_num;
     }
 }

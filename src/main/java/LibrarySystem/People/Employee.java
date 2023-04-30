@@ -13,4 +13,8 @@ public class Employee extends Person {
         super(name, address, date_of_birth, email_address, ssn);
         this.emp_id = EmployeeID;
     }
+
+    public int getEmp_id() {
+        return emp_id;
+    }
 }
