@@ -108,4 +108,12 @@ public class Person {
     public Person getPerson() {
         return this;
     }
+
+    public Person(String name, String address, Date date_of_birth, String email_address, SSN ssn) {
+        this.name = name;
+        this.address = address;
+        this.date_of_birth = date_of_birth;
+        this.email_address = email_address;
+        this.ssn = ssn;
+    }
 }
