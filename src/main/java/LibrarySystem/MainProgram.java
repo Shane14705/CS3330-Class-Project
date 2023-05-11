@@ -470,7 +470,7 @@ public class MainProgram {
 
 
     public static void main(String [] args) {
-
+        MainMenu menu = new MainMenu();
 
         while(true) {
             System.out.println("Please login first:\n");
@@ -556,7 +556,7 @@ public class MainProgram {
      * Attempts to login as a member using the given ID number. Must be performed before any other function in main program.
      * @param idNum The ID to attempt to login as.
      */
-    private static void loginMemberEvent(int idNum) {
+    protected static void loginMemberEvent(int idNum) {
         //Connecting to database
         try {
             Connection db = DriverManager.getConnection("jdbc:sqlite:library.db");
@@ -592,7 +592,7 @@ public class MainProgram {
      * Attempts to login as a employee using the given ID number. Must be performed before any other function in main program.
      * @param idNum The ID to attempt to login as.
      */
-    private static void loginEmployeeEvent(int idNum) {
+    protected static void loginEmployeeEvent(int idNum) {
         //Connecting to database
         try {
             Connection db = DriverManager.getConnection("jdbc:sqlite:library.db");
