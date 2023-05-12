@@ -129,7 +129,7 @@ public class MainProgram {
             Connection db = DriverManager.getConnection("jdbc:sqlite:library.db");
             String insertString = "INSERT INTO MEMBERS VALUES( ? , ? , ? , ? );";
             PreparedStatement insertStatement = db.prepareStatement(insertString);
-            insertStatement.setInt(1, rand.nextInt());
+            insertStatement.setInt(1, MemberID);
             insertStatement.setString(2, name);
             insertStatement.setString(3, memberType.toString());
 
@@ -172,7 +172,7 @@ public class MainProgram {
             Connection db = DriverManager.getConnection("jdbc:sqlite:library.db");
             String insertString = "INSERT INTO EMPLOYEES VALUES( ? , ? , ? , ? );";
             PreparedStatement insertStatement = db.prepareStatement(insertString);
-            insertStatement.setInt(1, rand.nextInt());
+            insertStatement.setInt(1, EmployeeID);
             insertStatement.setString(2, name);
             insertStatement.setString(3, empType.toString());
 
@@ -471,50 +471,50 @@ public class MainProgram {
 
     public static void main(String [] args) {
         MainMenu menu = new MainMenu();
-        SSN ssn = new SSN("123456785");
-
-        while (true) {
-            System.out.println("Please login first:\n");
-            System.out.println("What type of login do you have? (1 for Member, 2 for Employee: \n");
-            Scanner scanner = new Scanner(System.in);
-            int option = scanner.nextInt();
-            System.out.println("Please enter your ID: \n");
-            int ID_num = scanner.nextInt();
-            try {
-                switch (option) {
-                    case 1:
-                        loginMemberEvent(ID_num);
-                        userType = PersonType.Member;
-                        break;
-
-                    case 2:
-                        loginEmployeeEvent(ID_num);
-                        userType = PersonType.Employee;
-                        break;
-                }
-            } catch (IllegalArgumentException e) {
-                System.out.println("Unable to find account with that ID. Exiting...");
-                System.exit(-1);
-            }
-
-            //If we made it here, we are successfully logged in.
-            switch (userType) {
-                case Member -> System.out.println("TODO: Show GUI for members...\n");
-                case Employee -> System.out.println("TODO: Show GUI for employees...\n");
-            }
-
-
-            //TODO: Only certain options should appear based on the type of user logged in, which can be gotten from variable userType
-            if (userType == PersonType.Employee) {
-                System.out.print("Enter your option number: ");
-                option = scanner.nextInt();
-                switch (option) {
-                    case 1:
-                        System.out.println("Show GUI for adding new item info to collection");
-
-                }
-
-            }
+//        SSN ssn = new SSN("123456785");
+//
+//        while (true) {
+//            System.out.println("Please login first:\n");
+//            System.out.println("What type of login do you have? (1 for Member, 2 for Employee: \n");
+//            Scanner scanner = new Scanner(System.in);
+//            int option = scanner.nextInt();
+//            System.out.println("Please enter your ID: \n");
+//            int ID_num = scanner.nextInt();
+//            try {
+//                switch (option) {
+//                    case 1:
+//                        loginMemberEvent(ID_num);
+//                        userType = PersonType.Member;
+//                        break;
+//
+//                    case 2:
+//                        loginEmployeeEvent(ID_num);
+//                        userType = PersonType.Employee;
+//                        break;
+//                }
+//            } catch (IllegalArgumentException e) {
+//                System.out.println("Unable to find account with that ID. Exiting...");
+//                System.exit(-1);
+//            }
+//
+//            //If we made it here, we are successfully logged in.
+//            switch (userType) {
+//                case Member -> System.out.println("TODO: Show GUI for members...\n");
+//                case Employee -> System.out.println("TODO: Show GUI for employees...\n");
+//            }
+//
+//
+//            //TODO: Only certain options should appear based on the type of user logged in, which can be gotten from variable userType
+//            if (userType == PersonType.Employee) {
+//                System.out.print("Enter your option number: ");
+//                option = scanner.nextInt();
+//                switch (option) {
+//                    case 1:
+//                        System.out.println("Show GUI for adding new item info to collection");
+//
+//                }
+//
+//            }
 //            MainProgram.mainMenu();
 //
 //            switch (option) {
@@ -552,7 +552,6 @@ public class MainProgram {
 
 //    }
         }
-    }
     /**
      * Attempts to login as a member using the given ID number. Must be performed before any other function in main program.
      * @param idNum The ID to attempt to login as.
