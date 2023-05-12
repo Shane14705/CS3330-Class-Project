@@ -1,6 +1,8 @@
 package LibrarySystem.util;
 
-public enum EmployeeType {
+import java.io.Serializable;
+
+public enum EmployeeType implements Serializable {
     Technician,
     Librarian
 }

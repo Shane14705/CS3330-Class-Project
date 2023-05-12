@@ -1,6 +1,8 @@
 package LibrarySystem.util;
 
-public enum PersonType {
+import java.io.Serializable;
+
+public enum PersonType implements Serializable {
     Employee,
     Member
 }

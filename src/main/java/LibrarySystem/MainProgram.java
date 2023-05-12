@@ -49,7 +49,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(member);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            updateStatement.setBlob(2, input);
+            updateStatement.setBytes(2, input.readAllBytes());
             updateStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -75,7 +75,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(employee);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            updateStatement.setBlob(2, input);
+            updateStatement.setBytes(2, input.readAllBytes());
             updateStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -96,7 +96,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(item);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            updateStatement.setBlob(1, input);
+            updateStatement.setBytes(1, input.readAllBytes());
             updateStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -137,7 +137,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(member);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            insertStatement.setBlob(4, input);
+            insertStatement.setBytes(4, input.readAllBytes());
             insertStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -180,7 +180,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(emp);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            insertStatement.setBlob(4, input);
+            insertStatement.setBytes(4, input.readAllBytes());
             insertStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -224,7 +224,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(book);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            insertStatement.setBlob(5, input);
+            insertStatement.setBytes(5, input.readAllBytes());
             insertStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -267,7 +267,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(dvd);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            insertStatement.setBlob(5, input);
+            insertStatement.setBytes(5, input.readAllBytes());
             insertStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -309,7 +309,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(journal);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            insertStatement.setBlob(5, input);
+            insertStatement.setBytes(5, input.readAllBytes());
             insertStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -349,7 +349,7 @@ public class MainProgram {
             ObjectOutputStream outStream = new ObjectOutputStream(output);
             outStream.writeObject(newspaper);
             ByteArrayInputStream input = new ByteArrayInputStream(output.toByteArray());
-            insertStatement.setBlob(5, input);
+            insertStatement.setBytes(5, input.readAllBytes());
             insertStatement.execute();
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
@@ -412,7 +412,7 @@ public class MainProgram {
 
                 do {
                     ItemType itemType = ItemType.valueOf(set.getString(4));
-                    ObjectInputStream inputStream = new ObjectInputStream(set.getBlob(5).getBinaryStream());
+                    ObjectInputStream inputStream = new ObjectInputStream(new ByteArrayInputStream(set.getBytes(5)));
                     switch(itemType) {
                         case DVD -> results.add((LibraryDVD) inputStream.readObject());
                         case Book -> results.add((LibraryBook) inputStream.readObject());
@@ -549,10 +549,10 @@ public class MainProgram {
 //                default:
 //                    System.out.println("Invalid input");
 //            }
-        }
+//        }
 
+//    }
     }
-
     /**
      * Attempts to login as a member using the given ID number. Must be performed before any other function in main program.
      * @param idNum The ID to attempt to login as.
@@ -570,7 +570,7 @@ public class MainProgram {
                 ResultSet set = loginStatement.getResultSet();
 
                 MemberType memberType = MemberType.valueOf(set.getString(3));
-                ObjectInputStream inputStream = new ObjectInputStream(set.getBlob(4).getBinaryStream());
+                ObjectInputStream inputStream = new ObjectInputStream(new ByteArrayInputStream(set.getBytes(4)));
                 switch (memberType) {
                     case Professor -> currentUser = (Professor) inputStream.readObject();
                     case External -> currentUser = (External) inputStream.readObject();
@@ -606,7 +606,7 @@ public class MainProgram {
                 ResultSet set = loginStatement.getResultSet();
 
                 EmployeeType empType = EmployeeType.valueOf(set.getString(3));
-                ObjectInputStream inputStream = new ObjectInputStream(set.getBlob(4).getBinaryStream());
+                ObjectInputStream inputStream = new ObjectInputStream(new ByteArrayInputStream(set.getBytes(4)));
                 switch (empType) {
                     case Librarian -> currentUser = (Librarian) inputStream.readObject();
                     case Technician -> currentUser = (Technician) inputStream.readObject();
