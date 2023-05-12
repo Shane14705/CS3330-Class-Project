@@ -31,6 +31,18 @@ public class MainMenu extends JFrame {
                 new login_page();
             }
         });
+        newEmployeeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new newemployee_page();
+            }
+        });
+        newMembershipButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new newmember_page();
+            }
+        });
     }
 
 

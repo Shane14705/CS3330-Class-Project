@@ -12,7 +12,7 @@ public class SSN {
     private static final Pattern nextDigit = Pattern.compile("\\d", Pattern.MULTILINE);
 
     //We do not need to make SSN final since it is private and we know our class will never change it
-    private final char[] SSN;
+    private char[] SSN;
 
     /**
      * Creates a new SSN object.
@@ -25,9 +25,8 @@ public class SSN {
         if (regex.matcher(ssn).matches()) {
             SSN = new char[9];
             Scanner scanner = new Scanner(ssn);
-            for (int i = 0; i < 9; i++) {
-                SSN[i] = scanner.next(nextDigit).charAt(0);
-            }
+            SSN = ssn.toCharArray();
+            SSN.
         }
         else {
             throw new IllegalArgumentException("Invalid SSN number!");

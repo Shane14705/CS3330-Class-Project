@@ -471,6 +471,7 @@ public class MainProgram {
 
     public static void main(String [] args) {
         MainMenu menu = new MainMenu();
+        SSN ssn = new SSN("123456785");
 
         while(true) {
             System.out.println("Please login first:\n");
