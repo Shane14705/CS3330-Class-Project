@@ -34,6 +34,7 @@ public class MainMenu extends JFrame {
             }
         });
 
+
         if(MainProgram.userType == PersonType.Employee) {
             newItemButton.addActionListener(new ActionListener() {
                 @Override
@@ -42,6 +43,20 @@ public class MainMenu extends JFrame {
                 }
             });
         }
+
+        newEmployeeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new newemployee_page();
+            }
+        });
+        newMembershipButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new newmember_page();
+            }
+        });
+
     }
 
 
