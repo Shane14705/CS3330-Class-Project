@@ -1,5 +1,6 @@
 package LibrarySystem.util;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -7,7 +8,7 @@ import java.util.regex.Pattern;
 /**
  * Utility class to help represent and validate SSNs.
  */
-public class SSN {
+public class SSN implements Serializable {
     private static final Pattern regex = Pattern.compile("^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$|^(?!(000|666|9))\\d{3}(?!00)\\d{2}(?!0000)\\d{4}$", Pattern.MULTILINE);
     private static final Pattern nextDigit = Pattern.compile("\\d", Pattern.MULTILINE);
 
@@ -23,11 +24,8 @@ public class SSN {
      */
     public SSN(String ssn) throws IllegalArgumentException {
         if (regex.matcher(ssn).matches()) {
-            SSN = new char[9];
-            Scanner scanner = new Scanner(ssn);
-            for (int i = 0; i < 9; i++) {
-                SSN[i] = scanner.next(nextDigit).charAt(0);
-            }
+            ssn = ssn.replace("-", "");
+            SSN = ssn.toCharArray();
         }
         else {
             throw new IllegalArgumentException("Invalid SSN number!");

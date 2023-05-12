@@ -1,9 +1,10 @@
 package LibrarySystem.People;
 
+import java.io.Serializable;
 import java.util.Date;
 import LibrarySystem.util.SSN;
 
-public class Person {
+public class Person implements Serializable {
     private String name;
     private String address;
     private Date date_of_birth;
