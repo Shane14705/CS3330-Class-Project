@@ -1,8 +1,9 @@
-package LibrarySystem;
+package LibrarySystem.Gui;
 
 
 
 import LibrarySystem.LibraryCollection.LibrarySection;
+import LibrarySystem.MainProgram;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
