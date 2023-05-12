@@ -1,5 +1,7 @@
 package LibrarySystem;
 
+import LibrarySystem.util.PersonType;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -31,6 +33,15 @@ public class MainMenu extends JFrame {
                 new login_page();
             }
         });
+
+        if(MainProgram.userType == PersonType.Employee) {
+            newItemButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new NewItem_page();
+                }
+            });
+        }
     }
 
 
