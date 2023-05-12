@@ -1,6 +1,8 @@
 package LibrarySystem.util;
 
-public enum MemberType {
+import java.io.Serializable;
+
+public enum MemberType implements Serializable {
     Professor,
     Student,
     External

@@ -1,6 +1,8 @@
 package LibrarySystem.util;
 
-public enum ItemType {
+import java.io.Serializable;
+
+public enum ItemType implements Serializable {
     Book,
     DVD,
     Journal,
