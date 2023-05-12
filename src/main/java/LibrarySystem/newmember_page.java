@@ -59,7 +59,8 @@ public class newmember_page extends JFrame {
                     else {
                         member = MemberType.External;
                     }
-                    String datestr = monthBox.toString() + "/" + dayBox.toString() + "/" + yearBox.toString();
+                    //String datestr = monthBox.toString() + "/" + dayBox.toString() + "/" + yearBox.toString();
+                    String datestr = "05/25/2005";
                     SimpleDateFormat DateFor = new SimpleDateFormat("MM/dd/yyyy");
                     try {
                         Date date = DateFor.parse(datestr);

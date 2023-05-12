@@ -473,7 +473,7 @@ public class MainProgram {
         MainMenu menu = new MainMenu();
         SSN ssn = new SSN("123456785");
 
-        while(true) {
+        while (true) {
             System.out.println("Please login first:\n");
             System.out.println("What type of login do you have? (1 for Member, 2 for Employee: \n");
             Scanner scanner = new Scanner(System.in);
@@ -486,14 +486,13 @@ public class MainProgram {
                         loginMemberEvent(ID_num);
                         userType = PersonType.Member;
                         break;
-                        
+
                     case 2:
                         loginEmployeeEvent(ID_num);
                         userType = PersonType.Employee;
                         break;
                 }
-            }
-            catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println("Unable to find account with that ID. Exiting...");
                 System.exit(-1);
             }
@@ -503,13 +502,13 @@ public class MainProgram {
                 case Member -> System.out.println("TODO: Show GUI for members...\n");
                 case Employee -> System.out.println("TODO: Show GUI for employees...\n");
             }
-            
-            
+
+
             //TODO: Only certain options should appear based on the type of user logged in, which can be gotten from variable userType
             if (userType == PersonType.Employee) {
                 System.out.print("Enter your option number: ");
                 option = scanner.nextInt();
-                switch(option) {
+                switch (option) {
                     case 1:
                         System.out.println("Show GUI for adding new item info to collection");
 
@@ -552,6 +551,7 @@ public class MainProgram {
 //        }
 
 //    }
+        }
     }
     /**
      * Attempts to login as a member using the given ID number. Must be performed before any other function in main program.
