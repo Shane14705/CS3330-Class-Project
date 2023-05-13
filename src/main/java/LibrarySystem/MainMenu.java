@@ -1,5 +1,9 @@
 package LibrarySystem;
 
+import LibrarySystem.Gui.*;
+import LibrarySystem.People.Member;
+import LibrarySystem.util.PersonType;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -31,18 +35,59 @@ public class MainMenu extends JFrame {
                 new login_page();
             }
         });
-        newEmployeeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new newemployee_page();
-            }
-        });
+
+
+        if(MainProgram.userType == PersonType.Employee) {
+            newItemButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new NewItem_page();
+                }
+            });
+        }
+
+        if(MainProgram.userType == PersonType.Employee) {
+            returnItemButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new ReturnItem_page();
+                }
+            });
+        }
+        if(MainProgram.userType == PersonType.Employee) {
+            newEmployeeButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new newemployee_page();
+                }
+            });
+        }
         newMembershipButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new newmember_page();
             }
         });
+
+        quitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){ new Quit_page();}
+        });
+
+        if(MainProgram.userType == PersonType.Member){
+            searchAndBorrowButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) { new SearchBorrow_page();}
+            });
+        }
+
+        if(MainProgram.userType == PersonType.Employee){
+            checkOverduesButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) { new CheckOverdues_page(); }
+            });
+        }
+
     }
 
 

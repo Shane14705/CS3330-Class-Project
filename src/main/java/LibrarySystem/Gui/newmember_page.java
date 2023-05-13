@@ -1,5 +1,6 @@
-package LibrarySystem;
+package LibrarySystem.Gui;
 
+import LibrarySystem.MainProgram;
 import LibrarySystem.util.MemberType;
 import LibrarySystem.util.SSN;
 
